@@ -3,27 +3,38 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky"
+    "start": "nx run-many -t serve -p auth-service job-service executor-service"
   },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
   "private": true,
   "dependencies": {
-    "@apollo/server": "^4.11.3",
-    "@nestjs/apollo": "^13.0.4",
     "@nestjs/common": "^10.0.2",
+    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^10.0.2",
-    "@nestjs/graphql": "^13.0.4",
+    "@nestjs/microservices": "^11.0.12",
     "@nestjs/platform-express": "^10.0.2",
-    "@prisma/client": "^6.5.0",
     "axios": "^1.6.0",
-    "bcryptjs": "^3.0.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
-    "graphql": "^16.10.0",
+    "cookie-parser": "^1.4.7",
+    "module-alias": "^2.2.3",
+    "nestjs-pino": "^4.4.0",
+    "pino-http": "^10.4.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "_moduleAliases": {
+    "@food-order/grpc": "dist/libs/grpc/main",
+    "@food-order/graphql": "dist/libs/graphql/main",
+    "@food-order/pulsar": "dist/libs/pulsar/main",
+    "@food-order/nestjs": "dist/libs/nestjs/main",
+    "@food-order/prisma": "dist/libs/prisma/main"
   },
   "devDependencies": {
-    "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^10.0.1",
     "@nestjs/testing": "^10.0.2",
     "@nx/eslint": "20.6.4",
@@ -38,9 +49,11 @@
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
-    "@types/bcryptjs": "^3.0.0",
+    "@types/cookie-parser": "^1.4.8",
     "@types/jest": "^29.5.12",
     "@types/node": "~18.16.9",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^9.1.7",
@@ -48,13 +61,13 @@
     "jest-environment-node": "^29.7.0",
     "lint-staged": "^15.5.0",
     "nx": "20.6.4",
+    "pino-pretty": "^13.0.0",
     "prettier": "^2.6.2",
-    "prisma": "^6.5.0",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
-    "tslib": "^2.3.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.19.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^6.0.1"
   }
 }

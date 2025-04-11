@@ -1,0 +1,11 @@
+{
+  "name": "@food-order/graphql",
+  "version": "0.0.0",
+  "dependencies": {
+    "@apollo/server": "^4.11.3",
+    "@nestjs/apollo": "^13.0.4",
+    "@nestjs/graphql": "^13.0.4",
+    "graphql": "^16.10.0"
+  },
+  "devDependencies": {}
+}
