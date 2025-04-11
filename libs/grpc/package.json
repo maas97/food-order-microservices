@@ -1,0 +1,10 @@
+{
+  "name": "@food-order/grpc",
+  "version": "0.0.0",
+  "dependencies": {
+    "ts-proto": "^2.7.0",
+    "@grpc/grpc-js": "^1.13.2",
+    "@grpc/proto-loader": "^0.7.13"
+  },
+  "devDependencies": {}
+}
