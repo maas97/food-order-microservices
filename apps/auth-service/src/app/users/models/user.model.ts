@@ -1,4 +1,4 @@
-import { AbstractModel } from '@food-order/nestjs';
+import { AbstractModel } from '@food-order/graphql';
 import { Field, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()

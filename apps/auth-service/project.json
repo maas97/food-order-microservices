@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "dependsOn": ["generate-types"],
+      "dependsOn": ["generate-prisma", "^build"],
       "executor": "nx:run-commands",
       "options": {
         "command": "webpack-cli build",
@@ -24,7 +24,7 @@
       "dependsOn": ["build"],
       "options": {
         "buildTarget": "auth-service:build",
-        "runBuildTargetDependencies": false
+        "runBuildTargetDependencies": true
       },
       "configurations": {
         "development": {
@@ -35,20 +35,22 @@
         }
       }
     },
-    "generate-types": {
+    "generate-prisma": {
       "command": "prisma generate",
       "options": {
-        "cwd": "apps/auth-service"
-      }
+        "cwd": "{projectRoot}",
+        "input": ["prisma/schema.prisma"]
+      },
+      "cache": true
     },
     "migrate-prisma": {
       "command": "prisma migrate dev",
       "options": {
-        "cwd": "apps/auth-service"
+        "cwd": "{projectRoot}"
       }
     },
     "test": {
-      "dependsOn": ["generate-types"],
+      "dependsOn": ["generate-prisma"],
       "options": {
         "passWithNoTests": true
       }
