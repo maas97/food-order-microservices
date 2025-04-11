@@ -1,0 +1,8 @@
+{
+  "name": "@food-order/executor",
+  "version": "0.0.0",
+  "dependencies": {
+    "fibonacci": "^1.6.12"
+  },
+  "devDependencies": {}
+}
