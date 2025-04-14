@@ -1,0 +1,13 @@
+global:
+  imagePullPolicy: Always
+
+pulsar:
+  namespace: pulsar
+  namespaceCreate: true
+  
+
+jobService:
+  enabled: true
+  replicas: 1
+  image: '459463945558.dkr.ecr.eu-north-1.amazonaws.com/food-order/jobs:latest'
+  port: 3001
